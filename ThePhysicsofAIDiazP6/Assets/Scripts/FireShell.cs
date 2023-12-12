@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireShell : MonoBehaviour {
+public class FireShell : MonoBehaviour 
+{
 
     public GameObject bullet;
     public GameObject turret;
     public GameObject enemy;
 
-    void CreateBullet() {
+    void CreateBullet()
+    {
 
         Instantiate(bullet, turret.transform.position, turret.transform.rotation);
     }
 
-    void Update() {
+    void Update() 
+    {
 
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
 
             Vector3 aimAt = CalculateTrajectory();
-            if (aimAt != Vector3.zero) {
+            if (aimAt != Vector3.zero)
+            {
 
                 this.transform.forward = CalculateTrajectory();
                 CreateBullet();
@@ -27,7 +32,8 @@ public class FireShell : MonoBehaviour {
         }
     }
 
-    Vector3 CalculateTrajectory() {
+    Vector3 CalculateTrajectory()
+    {
 
         Vector3 p = enemy.transform.position - this.transform.position;
         Vector3 v = enemy.transform.forward * enemy.GetComponent<Drive>().speed;
@@ -48,7 +54,8 @@ public class FireShell : MonoBehaviour {
         if (t1 < 0.0f && t2 < 0.0f) return Vector3.zero;
         else if (t1 < 0.0f) t = t2;
         else if (t2 < 0.0f) t = t1;
-        else {
+        else 
+        {
 
             t = Mathf.Max(new float[] { t1, t2 });
         }
