@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4443659735907833281}
   - component: {fileID: 1903666561673431274}
   m_Layer: 0
-  m_Name: Shell
+  m_Name: AIShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

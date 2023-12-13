@@ -15,8 +15,7 @@ public class Shell : MonoBehaviour {
     float acceleration;
 
 
-    void OnCollisionEnter(Collision col) 
-    {
+    void OnCollisionEnter(Collision col) {
 
         if (col.gameObject.tag == "tank") {
             GameObject exp = Instantiate(explosion, this.transform.position, Quaternion.identity);
